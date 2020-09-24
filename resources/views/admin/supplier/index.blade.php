@@ -18,7 +18,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 
-                <a class="btn btn-success btn-sm float-right" href="{{route('productcompany.create')}}">Add Brand</a> 
+                <a class="btn btn-success btn-sm float-right" href="{{route('supplier.create')}}">Add Supplier</a> 
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -31,28 +31,24 @@
                             <th>Action</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                            <th>SL</th>  
-                            <th>sup name</th>  
-                            <th>sup email</th>  
-                            <th>Action</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                         @forelse($suppliers_info as $supplier_info)
                             <tr>
                                 <td>{{$loop->index + 1}}</td>
                                 <td>{{ $supplier_info->sup_name }}</td>
                                 <td>{{ $supplier_info->sup_email }}</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-primary">view</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    </div>
+                                </td>
                             </tr>
                             @empty
                         @endforelse
                             
                         </tbody>
                     </table>
-
-                    
                 </div>
             </div>
         </div>

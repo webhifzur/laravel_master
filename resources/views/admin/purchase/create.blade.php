@@ -10,17 +10,13 @@
 <h4 class="mt-4">Tables</h4>
     
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-        <li class="breadcrumb-item"><a href="{{route('productcompany.index')}}">Product Brand</a></li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item"><a href="{{ url('home') }}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('purchase.index') }}">Purchase</a></li>
+        <li class="breadcrumb-item active">Add purchase</li>
     </ol>
     
     
     <div class="card mb-4">
-        <div class="card-header">
-            <button type="button" class="btn btn-success btn-sm float-right">  Add Brand</button>
-        </div>
         <div class="card-body">
 
         <form action="{{route('purchase.store')}}" method="POST">

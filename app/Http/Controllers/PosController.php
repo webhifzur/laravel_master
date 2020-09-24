@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Purchase;
-use App\Models\Supplier;
+use App\Models\Pos;
 use App\Models\Product;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
-class PurchaseController extends Controller
+class PosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,10 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        return view('admin.purchase.index',[
-            'purchases_info' => Purchase::with('suplier')->get(),
+        return view('admin.pos.index',[
+            'products_info' => Product::all(),
+            'suppliers' => Supplier::all(),
+            'pos_info' => Pos::all(),
         ]);
     }
 
@@ -28,10 +30,7 @@ class PurchaseController extends Controller
      */
     public function create()
     {
-        return view('admin.purchase.create',[
-            'suppliers_info' => Supplier::all(),
-            'products' => Product::all()
-        ]);
+        //
     }
 
     /**
@@ -43,18 +42,18 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         // print_r($request->all());
-        Purchase::insert($request->except('_token'));
-        Product::find($request->product)->increment('opeing_stock',$request->product_quantity);
+        Pos::insert($request->except('_token'));
         return back();
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Purchase  $purchase
+     * @param  \App\Models\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function show(Purchase $purchase)
+    public function show(Pos $pos)
     {
         //
     }
@@ -62,10 +61,10 @@ class PurchaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Purchase  $purchase
+     * @param  \App\Models\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Purchase $purchase)
+    public function edit(Pos $pos)
     {
         //
     }
@@ -74,10 +73,10 @@ class PurchaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Purchase  $purchase
+     * @param  \App\Models\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Purchase $purchase)
+    public function update(Request $request, Pos $pos)
     {
         //
     }
@@ -85,10 +84,10 @@ class PurchaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Purchase  $purchase
+     * @param  \App\Models\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Purchase $purchase)
+    public function destroy(Pos $pos)
     {
         //
     }

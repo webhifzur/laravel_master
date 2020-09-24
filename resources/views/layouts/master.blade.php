@@ -69,6 +69,10 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link" href="{{ route('pos.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                POS
+                            </a>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Products
@@ -92,8 +96,8 @@
                             </a>
                             <div class="collapse" id="collapsesupplier" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('supplier.index') }}">Add Supplier</a>
-                                    <a class="nav-link" href="">Supplier List</a>
+                                    <a class="nav-link" href="{{ route('supplier.create') }}">Add Supplier</a>
+                                    <a class="nav-link" href="{{ route('supplier.index') }}">Supplier List</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsepurchase" aria-expanded="false" aria-controls="collapseLayouts">
@@ -103,8 +107,8 @@
                             </a>
                             <div class="collapse" id="collapsepurchase" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('purchase.index') }}">Add purchase</a>
-                                    <a class="nav-link" href="">purchase List</a>
+                                    <a class="nav-link" href="{{ route('purchase.create') }}">Add purchase</a>
+                                    <a class="nav-link" href="{{ route('purchase.index') }}">purchase List</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

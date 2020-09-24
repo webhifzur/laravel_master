@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductWarrantyController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\PosController;
 
 
 
@@ -42,6 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('productwarranty', ProductWarrantyController::class);
     Route::resource('supplier', SupplierController::class);
     Route::resource('purchase', PurchaseController::class);
+    Route::resource('pos', PosController::class);
 });
 
 // Supplier controller

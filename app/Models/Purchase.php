@@ -10,4 +10,12 @@ class Purchase extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    function suplier(){
+        return $this->hasone('App\Models\Supplier','id','supplier_id');
+    }
+
+    function productname(){
+        return $this->hasone('App\Models\Product','id','product');
+    }
 }
